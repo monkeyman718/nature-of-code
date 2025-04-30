@@ -12,7 +12,6 @@ function draw() {
     background(220);
 
     ball.add(velocity);
-    console.log(`${ball.x}, ${ball.y}`);
 
     stroke(255);
     circle(ball.x, ball.y, ballSize);
