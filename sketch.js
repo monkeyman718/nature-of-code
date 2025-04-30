@@ -1,9 +1,11 @@
 let velocity = {x: 2.5, y: 2};
 let ball;
+let ballSize;
 
 function setup() {
   createCanvas(600, 400);
   ball = new Vector(300, 200);
+  ballSize = 20;
 }
 
 function draw() {
@@ -13,13 +15,13 @@ function draw() {
     console.log(`${ball.x}, ${ball.y}`);
 
     stroke(255);
-    circle(ball.x, ball.y, 20);
+    circle(ball.x, ball.y, ballSize);
 
-    if (ball.x < 0 || ball.x > width) {
+    if ((ball.x - ballSize + 10) < 0 || (ball.x + ballSize - 10) > width) {
         velocity.x *= -1; 
     }
 
-    if (ball.y < 0 || ball.y > height) {
+    if ((ball.y - ballSize + 10) < 0 || (ball.y + ballSize - 10) > height) {
         velocity.y *= -1; 
     }
 }
